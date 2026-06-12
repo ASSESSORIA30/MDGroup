@@ -87,10 +87,17 @@ function Brands() {
                     <img src={b.img} alt={b.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105" />
                   </div>
                   <div className="p-9 lg:p-14 flex flex-col justify-center">
+                    {b.logoLight ? (
+                      <span className="inline-flex items-center justify-center bg-white/95 rounded-xl px-5 py-3 mb-7 self-start shadow-lg">
+                        <img src={b.logo} alt={b.name} className="h-10 lg:h-12 w-auto object-contain" />
+                      </span>
+                    ) : (
+                      <img src={b.logo} alt={b.name} className="h-12 lg:h-16 w-auto object-contain self-start mb-7" />
+                    )}
                     <p className="text-xs tracking-ultra uppercase mb-4" style={{ color: b.accent }}>{b.tag}</p>
                     <h3 className="font-display font-light text-4xl lg:text-5xl mb-5">{b.name}</h3>
                     <p className="text-mist font-light leading-relaxed mb-8 max-w-md">{b.desc}</p>
-                    <a href="#contacto" className="inline-flex items-center gap-3 text-sm font-medium w-fit group/cta" style={{ color: b.accent }}>
+                    <a href={b.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 text-sm font-medium w-fit group/cta" style={{ color: b.accent }}>
                       {b.cta}
                       <span className="transition-transform group-hover/cta:translate-x-1.5">→</span>
                     </a>
@@ -261,18 +268,15 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid md:grid-cols-4 gap-10 mb-14">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-5">
-              <svg width="24" height="24" viewBox="0 0 32 32" aria-hidden><path d="M8 22V10l8 6 8-6v12" fill="none" stroke="#B79268" strokeWidth="1.6"/></svg>
-              <span className="font-display text-lg">ModularDom <span className="text-bronze">Group</span></span>
-            </div>
+            <img src="/logo-group-t.png" alt="ModularDom Group" className="h-20 w-auto mb-5" />
             <p className="text-mist font-light max-w-sm">Construcción industrializada y sostenible. Un grupo, tres marcas, una visión.</p>
           </div>
           <div>
             <p className="text-xs tracking-ultra uppercase text-bronze mb-4">Marcas</p>
             <ul className="space-y-2 text-mist font-light">
-              <li><a href="#marcas" className="hover:text-bone">ModularDom</a></li>
-              <li><a href="#marcas" className="hover:text-bone">Ekohus Habitat</a></li>
-              <li><a href="#marcas" className="hover:text-bone">Velaris</a></li>
+              <li><a href="https://www.modulardom.com" target="_blank" rel="noopener noreferrer" className="hover:text-bone">ModularDom</a></li>
+              <li><a href="https://www.ekohushabitat.com" target="_blank" rel="noopener noreferrer" className="hover:text-bone">Ekohus Habitat</a></li>
+              <li><a href="https://www.velarisvillas.com" target="_blank" rel="noopener noreferrer" className="hover:text-bone">Velaris</a></li>
             </ul>
           </div>
           <div>
